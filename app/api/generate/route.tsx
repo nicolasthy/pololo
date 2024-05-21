@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ImageResponse } from "next/og";
 
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge";
 
 const games = [
   {
