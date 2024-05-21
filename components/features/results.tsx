@@ -69,6 +69,7 @@ const Results = ({
   const calculateScale = (): number => {
     // Default size is 1080x1920, so we need to calculate the scale
     // based on the width of the screen
+    if (typeof window === "undefined") return 1;
     const width = window.innerWidth;
     const scale = Math.min((width - 24 * 2) / config.width);
 
