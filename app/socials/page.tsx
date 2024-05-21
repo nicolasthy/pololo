@@ -16,98 +16,91 @@ import { Results } from "@/components/features/results";
 const games = [
   {
     players: [
-      { firstName: "Justine", lastName: "Brunet" },
-      { firstName: "Eva", lastName: "Lagier" },
+      { firstName: "L.", lastName: "Neumayer" },
+      { firstName: "D.", lastName: "Schwartzman" },
     ],
     sets: [
-      [{ score: 5 }, { score: 7 }],
-      [{ score: 5 }, { score: 7 }],
-    ],
-  },
-  {
-    players: [
-      { firstName: "Katy", lastName: "Grevot" },
-      { firstName: "Charlotte", lastName: "JeanJean" },
-    ],
-    sets: [
-      [{ score: 6 }, { score: 3 }],
-      [{ score: 6 }, { score: 2 }],
-    ],
-  },
-  {
-    players: [
-      { firstName: "Daphnée", lastName: "Grange" },
-      { firstName: "Marine", lastName: "Delauzun" },
-    ],
-    sets: [
-      [{ score: 1 }, { score: 6 }],
-      [{ score: 4 }, { score: 6 }],
-    ],
-  },
-  {
-    players: [
-      { firstName: "Damien", lastName: "Giannini" },
-      { firstName: "Gilles", lastName: "Girard" },
-    ],
-    sets: [
-      [{ score: 4 }, { score: 6 }],
+      [{ score: 2 }, { score: 6 }],
       [{ score: 3 }, { score: 6 }],
     ],
   },
   {
     players: [
-      { firstName: "Najih", lastName: "Boumahdi" },
-      { firstName: "Rémi", lastName: "Michel" },
+      { firstName: "A.", lastName: "Galarmeau" },
+      { firstName: "Q.", lastName: "Halys" },
     ],
     sets: [
-      [{ score: 1 }, { score: 6 }],
+      [{ score: 5 }, { score: 7 }],
+      [{ score: 3 }, { score: 6 }],
+    ],
+  },
+  {
+    players: [
+      { firstName: "J.", lastName: "Marie" },
+      { firstName: "T.", lastName: "Droguet" },
+    ],
+    sets: [
+      [{ score: 6 }, { score: 7 }],
+      [{ score: 3 }, { score: 6 }],
+    ],
+  },
+  {
+    players: [
+      { firstName: "G.", lastName: "Barrere" },
+      { firstName: "T.", lastName: "Papamalamis" },
+    ],
+    sets: [
+      [{ score: 6 }, { score: 3 }],
+      [{ score: 6 }, { score: 1 }],
+    ],
+  },
+  {
+    players: [
+      { firstName: "Z.", lastName: "Bergs" },
+      { firstName: "C.", lastName: "Chidekh" },
+    ],
+    sets: [
+      [{ score: 6 }, { score: 1 }],
+      [{ score: 6 }, { score: 1 }],
+    ],
+  },
+  {
+    players: [
+      { firstName: "H.", lastName: "Grenier" },
+      { firstName: "T.", lastName: "Boyer" },
+    ],
+    sets: [
+      [{ score: 6 }, { score: 4 }],
+      [{ score: 3 }, { score: 6 }],
       [{ score: 7 }, { score: 6 }],
+    ],
+  },
+  {
+    players: [
+      { firstName: "M.", lastName: "Cressy" },
+      { firstName: "A.", lastName: "Pellegrino" },
+    ],
+    sets: [
+      [{ score: 6 }, { score: 7 }],
+      [{ score: 6 }, { score: 4 }],
       [{ score: 6 }, { score: 7 }],
     ],
   },
   {
     players: [
-      { firstName: "Antoine", lastName: "Hebert" },
-      { firstName: "Lucien", lastName: "Juan" },
+      { firstName: "O.", lastName: "Roca Batalla" },
+      { firstName: "D.", lastName: "Novak" },
     ],
     sets: [
-      [{ score: 6 }, { score: 2 }],
-      [{ score: 6 }, { score: 4 }],
-    ],
-  },
-  {
-    players: [
-      { firstName: "Julien", lastName: "Abello" },
-      { firstName: "Bertrand", lastName: "Delauzun" },
-    ],
-    sets: [
-      [{ score: 6 }, { score: 0 }],
-      [{ score: 6 }, { score: 2 }],
-    ],
-  },
-  {
-    players: [
-      { firstName: "Loan", lastName: "Manzon-Bonnet" },
-      { firstName: "Thierry", lastName: "Morard" },
-    ],
-    sets: [
-      [{ score: 6 }, { score: 2 }],
-      [{ score: 2 }, { score: 3 }],
-    ],
-  },
-  {
-    players: [
-      { firstName: "Loan", lastName: "Manzon-Bonnet" },
-      { firstName: "Thierry", lastName: "Morard" },
-    ],
-    sets: [
-      [{ score: 6 }, { score: 2 }],
-      [{ score: 2 }, { score: 3 }],
+      [{ score: 4 }, { score: 6 }],
+      [{ score: 2 }, { score: 6 }],
     ],
   },
 ];
 
-export default function Generate() {
+// const games = [];
+
+export default function Socials() {
   const [size, setSize] = useState<"instagram:story" | "instagram:post">(
     "instagram:story"
   );
@@ -164,8 +157,6 @@ export default function Generate() {
               <Switch checked={darkMode} onCheckedChange={setDarkMode} />
             </div>
           </div>
-
-          <Button variant="outline">Edit</Button>
           <Button>Export ({pages})</Button>
         </div>
       </div>
