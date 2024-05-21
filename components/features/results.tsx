@@ -21,7 +21,7 @@ const Results = ({
     <motion.div
       key={page}
       layout
-      className={cn("mx-auto self-center rounded-md shrink-0 mt-12 mb-36", {
+      className={cn("mx-auto self-center rounded-md shrink-0 mt-16 mb-36", {
         "w-[calc(10*9vw)] max-w-[540px] h-[calc(10*16vw)] max-h-[960px]":
           size === "instagram:story",
         "w-[calc(10*9vw)] h-[calc(10*9vw)] max-w-[540px]  max-h-[540px]":

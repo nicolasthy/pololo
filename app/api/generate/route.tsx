@@ -1,7 +1,9 @@
 import { cn } from "@/lib/utils";
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+export const config = {
+  runtime: "edge",
+};
 
 const games = [
   {
@@ -87,8 +89,20 @@ const games = [
   },
 ];
 
+type ImageSize = "instagram:story" | "instagram:post";
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const size = {
+    "instagram:story": {
+      width: 1080,
+      height: 1920,
+    },
+    "instagram:post": {
+      width: 1080,
+      height: 1080,
+    },
+  }[searchParams.get("size") as ImageSize];
 
   return new ImageResponse(
     (
@@ -200,8 +214,8 @@ export async function GET(request: Request) {
       </div>
     ),
     {
-      width: 1080 / 2,
-      height: 1920 / 2,
+      width: size.width,
+      height: size.height,
     }
   );
 }
