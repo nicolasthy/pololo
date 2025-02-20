@@ -1,17 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
 
-import { Results } from "@/components/features/results";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Results } from "@/features/results";
+import { SocialsToolbar } from "@/features/socials/toolbar";
 
 const games = [
   {
@@ -101,9 +97,7 @@ const games = [
 // const games = [];
 
 export default function Socials() {
-  const [size, setSize] = useState<"instagram:story" | "instagram:post">(
-    "instagram:story"
-  );
+  const [size, setSize] = useState<"instagram:story" | "instagram:post">("instagram:story");
   const [darkMode, setDarkMode] = useState(false);
 
   const pages = Math.ceil(
@@ -117,24 +111,16 @@ export default function Socials() {
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
-    <main className="w-full min-h-screen flex flex-col justify-center overflow-y-auto">
-      <Results
-        games={games}
-        size={size}
-        darkMode={darkMode}
-        page={currentPage}
-      />
+    <main className="flex min-h-screen w-full flex-col justify-center overflow-y-auto bg-muted bg-[radial-gradient(hsl(var(--muted-foreground)/0.2)_1px,transparent_0)] bg-[length:30px_30px]">
+      <Results games={games} size={size} darkMode={darkMode} page={currentPage} />
 
-      <div className="fixed min-[600px]:bottom-12 bottom-[2vw] inset-x-0 flex items-center justify-center px-[5vw]">
-        <div className="bg-white border border-border shadow-lg rounded-lg max-w-fit w-full px-4 py-3 flex gap-x-4 items-end">
-          <div className="flex flex-col gap-y-2 min-w-[136px] sm:min-w-[158px]">
+      <SocialsToolbar />
+
+      {/* <div className="fixed inset-x-0 bottom-[2vw] flex items-center justify-center px-[5vw] min-[600px]:bottom-12">
+        <div className="flex w-full max-w-fit items-end gap-x-4 rounded-lg border border-border bg-white px-4 py-3 shadow-lg">
+          <div className="flex min-w-[136px] flex-col gap-y-2 sm:min-w-[158px]">
             <Label className="text-xs">Size</Label>
-            <Select
-              value={size}
-              onValueChange={(value: "instagram:story" | "instagram:post") =>
-                setSize(value)
-              }
-            >
+            <Select value={size} onValueChange={(value: "instagram:story" | "instagram:post") => setSize(value)}>
               <SelectTrigger className="min-w-0">
                 <div className="truncate">
                   {
@@ -152,14 +138,14 @@ export default function Socials() {
             </Select>
           </div>
           <div className="flex flex-col gap-y-2">
-            <Label className="text-xs truncate">Dark mode</Label>
-            <div className="flex flex-col h-9 justify-center">
+            <Label className="truncate text-xs">Dark mode</Label>
+            <div className="flex h-9 flex-col justify-center">
               <Switch checked={darkMode} onCheckedChange={setDarkMode} />
             </div>
           </div>
           <Button>Export ({pages})</Button>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
